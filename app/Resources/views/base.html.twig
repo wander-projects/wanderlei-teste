@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Wanderlei-teste{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+        {% endblock %}    
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js">
+            <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js">
+            <script>
+                $(document).ready(function() {
+                    $('#example').DataTable();
+                
+                    $('.datepickerStart').datepicker({
+                        format: 'yyyy-mm-dd',
+                        startDate: '-3d'
+                    });
+                    $('.datepickerEnd').datepicker({
+                        format: 'yyyy-mm-dd',
+                        startDate: '-3d'
+                    });
+            
+                    $('#activity_status').change(function() {
+                        selected = $(this).val(); 
+                        switch(selected) { 
+                            case '1':
+                                $('#endDate').show();
+                                break;
+                            case '2':
+                                $('#endDate').show();
+                                break;
+                            case '3':
+                                $('#endDate').show();
+                                break;
+                            default:
+                                $('#endDate').hide();
+                                break;
+                        }
+                    });
+
+                });
+            </script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>
