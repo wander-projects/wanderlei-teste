@@ -68,3 +68,10 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+    
+rollerworks_password_strength:
+    blacklist:
+        default_provider: rollerworks_password_strength.blacklist.provider.array
+        providers:
+            # The 'array' contains a list with all the blacklisted words
+            array: [123mudar, 123@mudar]

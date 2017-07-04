@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Apache24/htdocs/wanderlei-teste/src/AppBundle/Controller/ActivityController.php</file>
-            <file>file:/C:/Apache24/htdocs/wanderlei-teste/app/Resources/views/base.html.twig</file>
-            <file>file:/C:/Apache24/htdocs/wanderlei-teste/app/Resources/views/activity/index.html.twig</file>
-            <file>file:/C:/Apache24/htdocs/wanderlei-teste/src/AppBundle/Form/ActivityType.php</file>
+            <file>file:/var/www/wanderlei-teste/src/AppBundle/Controller/ActivityController.php</file>
+            <file>file:/var/www/wanderlei-teste/app/config/config.yml</file>
+            <file>file:/var/www/wanderlei-teste/app/Resources/views/user/new.html.twig</file>
+            <file>file:/var/www/wanderlei-teste/src/AppBundle/Controller/UserController.php</file>
+            <file>file:/var/www/wanderlei-teste/src/AppBundle/Entity/User.php</file>
         </group>
     </open-files>
 </project-private>

@@ -16,6 +16,7 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
+      <parameter key="RollerworksPasswordStrengthBundle">Rollerworks\Bundle\PasswordStrengthBundle\RollerworksPasswordStrengthBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -61,6 +62,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/var/www/wanderlei-teste/src/AppBundle</parameter>
         <parameter key="namespace">AppBundle</parameter>
+      </parameter>
+      <parameter key="RollerworksPasswordStrengthBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/wanderlei-teste/vendor/rollerworks/password-strength-bundle/src</parameter>
+        <parameter key="namespace">Rollerworks\Bundle\PasswordStrengthBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -325,6 +331,13 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="rollerworks_password_strength.blacklist_provider">rollerworks_password_strength.blacklist.provider.array</parameter>
+    <parameter key="rollerworks_password_strength.blacklist.sqlite.dsn"></parameter>
+    <parameter key="rollerworks_password_strength.blacklist.provider.noop.class">Rollerworks\Bundle\PasswordStrengthBundle\Blacklist\NoopProvider</parameter>
+    <parameter key="rollerworks_password_strength.blacklist.provider.array.class">Rollerworks\Bundle\PasswordStrengthBundle\Blacklist\ArrayProvider</parameter>
+    <parameter key="rollerworks_password_strength.blacklist.provider.sqlite.class">Rollerworks\Bundle\PasswordStrengthBundle\Blacklist\SqliteProvider</parameter>
+    <parameter key="rollerworks_password_strength.blacklist.provider.chain.class">Rollerworks\Bundle\PasswordStrengthBundle\Blacklist\ChainProvider</parameter>
+    <parameter key="rollerworks_password_strength.blacklist.validator.class">Rollerworks\Bundle\PasswordStrengthBundle\Validator\Constraints\BlacklistValidator</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -455,7 +468,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>nW-jBd+lsx</argument>
                 <argument>0</argument>
-                <argument>tdHtJwPQX-mpFiVN3C3IBO</argument>
+                <argument>OP310c+ljK2FbtyE84vri+</argument>
                 <argument>/var/www/wanderlei-teste/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -638,7 +651,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>tD1907+u4z</argument>
       <argument>0</argument>
-      <argument>tdHtJwPQX-mpFiVN3C3IBO</argument>
+      <argument>OP310c+ljK2FbtyE84vri+</argument>
       <argument>/var/www/wanderlei-teste/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -648,7 +661,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>jIkkZCZt5J</argument>
       <argument>0</argument>
-      <argument>tdHtJwPQX-mpFiVN3C3IBO</argument>
+      <argument>OP310c+ljK2FbtyE84vri+</argument>
       <argument>/var/www/wanderlei-teste/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1161,6 +1174,10 @@
               <argument key="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator">security.validator.user_password</argument>
               <argument key="doctrine.orm.validator.unique">doctrine.orm.validator.unique</argument>
               <argument key="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator">doctrine.orm.validator.unique</argument>
+              <argument key="rollerworks_password_strength">rollerworks_password_strength.validator.password_strength</argument>
+              <argument key="Rollerworks\Bundle\PasswordStrengthBundle\Validator\Constraints\PasswordStrengthValidator">rollerworks_password_strength.validator.password_strength</argument>
+              <argument key="rollerworks_password_strength.blacklist.validator">rollerworks_password_strength.blacklist.validator</argument>
+              <argument key="Rollerworks\Bundle\PasswordStrengthBundle\Validator\Constraints\BlacklistValidator">rollerworks_password_strength.blacklist.validator</argument>
             </argument>
           </service>
         </argument>
@@ -1641,7 +1658,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>59599257aad518.94244855</argument>
+            <argument>5959b5abc725f1.39226807</argument>
           </service>
         </argument>
       </argument>
@@ -1789,7 +1806,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>59599257aad518.94244855</argument>
+            <argument>5959b5abc725f1.39226807</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2369,6 +2386,14 @@
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
     </service>
+    <service id="rollerworks_password_strength.validator.password_strength" class="Rollerworks\Bundle\PasswordStrengthBundle\Validator\Constraints\PasswordStrengthValidator">
+      <tag name="validator.constraint_validator" alias="rollerworks_password_strength"/>
+      <argument type="service" id="translator" on-invalid="null"/>
+    </service>
+    <service id="rollerworks_password_strength.blacklist.validator" class="Rollerworks\Bundle\PasswordStrengthBundle\Validator\Constraints\BlacklistValidator">
+      <tag name="validator.constraint_validator" alias="rollerworks_password_strength.blacklist.validator"/>
+      <argument type="service" id="rollerworks_password_strength.blacklist_provider"/>
+    </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
@@ -2755,6 +2780,12 @@
         </service>
       </configurator>
     </service>
+    <service id="rollerworks_password_strength.blacklist_provider" class="Rollerworks\Bundle\PasswordStrengthBundle\Blacklist\ArrayProvider">
+      <argument type="collection">
+        <argument>123mudar</argument>
+        <argument>123@mudar</argument>
+      </argument>
+    </service>
     <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="service" id="templating.locator"/>
@@ -2779,6 +2810,10 @@
       <call method="addPath">
         <argument>/var/www/wanderlei-teste/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/wanderlei-teste/src/AppBundle/Resources/views</argument>
+        <argument>App</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/wanderlei-teste/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
