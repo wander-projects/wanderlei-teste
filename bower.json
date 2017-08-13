@@ -1,0 +1,21 @@
+{
+  "name": "forsale",
+  "homepage": "https://github.com/wander-projects/forsale",
+  "authors": [
+    "wander-projects <santos_lei@hotmail.com>"
+  ],
+  "description": "frontend manager",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.0",
+    "components-font-awesome": "^4.7.0"
+  }
+}
