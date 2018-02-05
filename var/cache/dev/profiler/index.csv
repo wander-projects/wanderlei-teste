@@ -1,8 +1,2 @@
-c0d626,127.0.0.1,GET,http://localhost:8000/user,1499051307,,200
-d9c3c9,127.0.0.1,GET,http://localhost:8000/user,1499051435,,200
-2e94bf,127.0.0.1,GET,http://localhost:8000/new,1499051443,e1dd06,200
-e1dd06,127.0.0.1,GET,http://localhost:8000/new,1499051443,,404
-8395cc,127.0.0.1,GET,http://localhost:8000/user/new,1499051452,,200
-4e87d6,127.0.0.1,GET,http://localhost:8000/user/new,1499051688,,200
-01853e,127.0.0.1,POST,http://localhost:8000/user/new,1499051717,,200
-41c7ff,127.0.0.1,POST,http://localhost:8000/user/new,1499051736,,200
+328a33,127.0.0.1,GET,http://localhost:8000/,1517421171,11e720,200
+11e720,127.0.0.1,GET,http://localhost:8000/,1517421171,,404
